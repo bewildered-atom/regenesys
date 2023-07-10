@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "302656ee-aced-4ecb-a5f3-44d195b8c358",
+		"name": "Regenesys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16890767"
+	},
+	"item": [
+		{
+			"name": "Post User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "shivam",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "shivam",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"salary\": 1000,\n    \"currency\": \"USD\",\n    \"on_contract\": true,\n    \"department\": \"Web Dev\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10040/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10040",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10040/api/v1/users/ae85a485-a993-47eb-8fbd-635933d5c49a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10040",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"ae85a485-a993-47eb-8fbd-635933d5c49a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Salary",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "shivam",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "shivam",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10040/api/v1/users/?on_contract=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10040",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2023",
+							"disabled": true
+						},
+						{
+							"key": "on_contract",
+							"value": "0"
+						},
+						{
+							"key": "subde",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
